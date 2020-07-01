@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PickOutPickUp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <div class= "navbar">
+      <%if logged_in? %>
+      <%= link_to "Sign Out", signout_path, method: 'delete' %>
+
+      <%else%>
+      <%= link_to "Sign Up", signup_path%> |
+      <%= link_to "Sign In", signin_path%> |
+      <%end%>
+    </div>
+
+    <div>
+      <% if flash[:message] %>
+        <%= flash[:message] %>
+      <%end%>
+
+      <%=@error%>
+      </div>
+
+    <%= yield %>
+  </body>
+</html>
