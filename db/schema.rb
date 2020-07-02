@@ -34,10 +34,10 @@ ActiveRecord::Schema.define(version: 2020_07_01_184336) do
     t.string "name"
     t.string "description"
     t.float "price"
-    t.boolean "chef_speciality"
-    t.boolean "vegan"
+    t.boolean "chef_speciality", default: false
+    t.boolean "vegan", default: false
     t.integer "menu_id"
-    t.boolean "available"
+    t.boolean "available", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -88,7 +88,6 @@ ActiveRecord::Schema.define(version: 2020_07_01_184336) do
     t.string "password_digest"
     t.string "email"
     t.integer "staff_at_restaurant_id"
-    t.string "UID"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

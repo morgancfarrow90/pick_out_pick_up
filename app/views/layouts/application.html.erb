@@ -13,12 +13,15 @@
 
     <div class= "navbar">
       <%if logged_in? %>
+      <%= link_to "My Orders", take_out_orders_path%>
+      <%= link_to "Restaurants", restaurants_path%>
       <%= link_to "Sign Out", signout_path, method: 'delete' %>
 
       <%else%>
       <%= link_to "Sign Up", signup_path%> |
       <%= link_to "Sign In", signin_path%> |
-      <%= link_to "Sign Up or Sign In with Google", '/auth/google_oauth2'%>
+      <%= link_to "Google Sign Up/In", '/auth/google_oauth2'%> |
+
       <%end%>
     </div>
 
