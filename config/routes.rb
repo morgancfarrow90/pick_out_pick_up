@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   post '/signin', to: 'sessions#create'
 
   delete '/signout', to: 'sessions#destroy', as: 'signout'
-  
+
+  get '/auth/google_oauth2/callback', to: 'sessions#omniauth'
+
   resources :take_out_orders
   resources :menu_item_reviews
   resources :restaurant_reviews
